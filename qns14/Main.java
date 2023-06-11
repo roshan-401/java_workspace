@@ -1,36 +1,51 @@
 package qns14;
 
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
 
 public class Main{
 
     public static void main(String[] args) {
-        Queue<Integer> numbers = new PriorityQueue<>();
+        Deque<Integer> numbers = new ArrayDeque<>();
         Scanner input = new Scanner(System.in);
         while (true) {
             System.out.println("Pickout the option:\n"+
-            "1:Add element\t"+
-            "2:Delete element\n"+
-            "3:First element\t"+
-            "4:Print queue\n"+
+            "1:Add element at first\t"+
+            "2:Add element at last\n"+
+            "3:Delete element at first\t"+
+            "4:Delete element at last\n"+
+            "5:First element\t"+
+            "6:Last element\n"+
+            "7:Print queue\t"+
             "0:Exit!");
             switch (input.nextInt()) {
                 case 1: {
                     System.out.print("Enter the element to insert: ");
-                    numbers.add(input.nextInt());
+                    numbers.addFirst(input.nextInt());
                 }
                 break;
                 case 2: {
-                    System.out.println("element " +numbers.remove()+" removed");
+                    System.out.print("Enter the element to insert: ");
+                    numbers.addLast(input.nextInt());
                 }
                 break;
                 case 3: {
-                    System.out.println("The first element is  "+numbers.peek());
+                    System.out.println("first element " +numbers.removeFirst()+" removed");
                 }
                 break;
                 case 4: {
+                    System.out.println("last element is  "+numbers.removeLast()+" removed");
+                }
+                break;
+                case 5:{
+                    System.out.println("the first element is "+numbers.getFirst());
+                }
+                break;
+                case 6:{
+                    System.out.println("the last element is "+numbers.getLast());
+                }
+                case 7: {
                     System.out.println(numbers);
                 }
                 break;
