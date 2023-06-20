@@ -12,7 +12,7 @@ class Authenticator {
     private static final String PASSWORD = "password";
 
     public static void authenticate(String username, String password) throws AuthenticationException {
-        if (USERNAME.equals(username) && PASSWORD.equals(password)) {
+        if (!USERNAME.equals(username) || !PASSWORD.equals(password)) {
             throw new AuthenticationException("Invalid username or password.");
         }
     }
