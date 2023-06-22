@@ -1,0 +1,25 @@
+import java.util.List;
+import java.util.ArrayList;
+
+class Stack<T>{
+	private List stack;
+	public  Stack() {
+		 stack = new ArrayList<>();
+	}
+	public void push(T data) {
+		this.stack.add(data);
+	}
+	public T pop() {
+		return (T) stack.remove(stack.size()-1);
+	}
+}
+public class Main {
+	public static void main(String[] args) {
+		Stack s1 = new Stack();
+		s1.push(6);
+		s1.push(7);
+		s1.push(8);
+		System.out.println(s1.pop());
+		System.out.println(s1.pop());
+	}
+}
