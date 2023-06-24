@@ -1,4 +1,4 @@
-package CO5;
+package qns5;
 class Multiplication extends Thread {
 	public Multiplication() {
 		for(int i=1;i<11;i++) {
